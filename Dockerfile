@@ -24,7 +24,7 @@ COPY . .
 RUN composer install --no-dev --optimize-autoloader
 
 # Instalar dependencias de Yarn
-RUN yarn
+RUN yarn install
 
 # Compilar assets con Yarn
 RUN yarn prod
