@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('phone') ;
-            $table->string('language');
+            $table->string('language')->default('ninguno'); // Asigna 'en' como valor por defecto, por ejemplo.
+
             $table->timestamps();
         });
     }

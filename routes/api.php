@@ -21,22 +21,17 @@ Route::get('/students', [studentController::class, 'index']);
 
 
 //MOSTRAR UN ESTUDIANTE
-Route::get('/students/{id}', function () {
-    return 'Obteniendo un estudiante ';
-});
+Route::get('/students/{id}', [studentController::class,'show']);
 
 //CREAR ESTUDIANTES
-Route::post('/students', function () {
-    return 'Creando Estudiantes: ';
-});
+Route::post('/students', [studentController::class,'store']);
 
-//ACTUALIZANDO ESTUDIANTES
-Route::put('/students/{id}', function ($id) {
-    return 'Actualizando estudiantes';
-});
+//ACTUALIZANDO ESTUDIANTES, MODIFICA TODO EL REGISTRO
+Route::put('/students/{id}', [studentController::class,'update']);
+
+//ACTUALIZANDO ESTUDIANTES de forma parcial, REGISTRA SOLO UNA PARTE DEL OBJETO
+Route::patch('/students/{id}', [studentController::class,'updatePartial']);
 
 //ELIMINANDO ESTUDIANTES
-Route::delete('/students/{id}', function ($id) {
-    return 'Eliminando estudiantes';
-});
+Route::delete('/students/{id}', [studentController::class,'destroy']);
 
